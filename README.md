@@ -23,3 +23,5 @@ And
 - translation files have not yet been created.
 - instructions are in the configuration of the plugin. More explanatory to follow.
 - Address fields, address1 and address2, in user profile will be concatenated with an EOL/LF in contact details Address.
+- versioning of contacts details is not supported as it directly hits on the database
+
