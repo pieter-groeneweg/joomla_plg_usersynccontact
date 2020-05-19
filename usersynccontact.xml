@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.9" type="plugin" group="user" method="upgrade">
+	<name>User - Contact Sync</name>
+	<author>Pieter Groeneweg</author>
+	<creationDate>May 2020</creationDate>
+	<copyright>(C) bizgo.nl. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>info@bizgo.nl</authorEmail>
+	<authorUrl>bizgo.nl</authorUrl>
+	<version>0.0.2</version>
+	<description>Syncs user profile data to linked contact(s) - make sure it is the last plugin (in user type) execution order</description>
+	<element>user</element>
+	<files>
+		<filename plugin="usersynccontact">usersynccontact.php</filename>
+	</files>
+	<languages>
+		<!--
+		<language tag="en-GB">en-GB.plg_user_usersynccontact.ini</language>
+		<language tag="en-GB">en-GB.plg_user_usersynccontact.sys.ini</language>
+		-->
+	</languages>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field 
+					type="spacer" 
+					name="missing_link" 
+					label="All core profile fields are included but for
+					&lt;ul&gt;
+					&lt;li&gt;my favourite book
+					&lt;li&gt;aboute me
+					&lt;li&gt;date of birth
+					&lt;/ul&gt;
+					these need new inclusion by adding the custom field ID's
+					" />
+				<field 
+					type="spacer" 
+					name="instructions" 
+					label="Create custom fields for your contacts and add the field ID below.
+					" />
+				<field 
+					type="text" 
+					name="favoritebook_id" 
+					label="My Favourite Book ID"
+					description="Type the ID of the contact custom field"
+					pattern="^(0|[1-9][0-9]*)$"
+					maxlength="5"
+					size="6"
+					class="inputbox"/>
+
+				<field 
+					type="text" 
+					name="aboutme_id" 
+					label="About Me ID"
+					description="Type the ID of the contact custom field"
+					pattern="^(0|[1-9][0-9]*)$"
+					maxlength="5"
+					size="6"
+					class="inputbox"/>
+
+				<field 
+					type="text" 
+					name="dob_id" 
+					label="Date of Birth ID"
+					description="Type the ID of the contact custom field"
+					pattern="^(0|[1-9][0-9]*)$"
+					maxlength="5"
+					size="6"
+					class="inputbox"/>
+
+				<field 
+					type="spacer" 
+					name="missing_link2" 
+					label="All core content fields are included but for
+					&lt;ul&gt;
+					&lt;li&gt;mobile
+					&lt;li&gt;fax
+					&lt;li&gt;miscelaneous
+					&lt;/ul&gt;
+					these need new inclusion by adding the custom field ID's
+					" />
+				<field 
+					type="spacer" 
+					name="instructions2" 
+					label="Create custom fields for your users and add the field ID below.
+					" />				
+				<field 
+					type="text" 
+					name="mob_id" 
+					label="Mobile Phone"
+					description="Type the ID of the user custom field showing Mobile"
+					pattern="^(0|[1-9][0-9]*)$"
+					maxlength="5"
+					size="6"
+					class="inputbox"/>
+
+				<field 
+					type="text" 
+					name="fax_id" 
+					label="Fax number"
+					description="Type the ID of the user custom field showing Fax"
+					pattern="^(0|[1-9][0-9]*)$"
+					maxlength="5"
+					size="6"
+					class="inputbox"/>
+
+				<field 
+					type="text" 
+					name="misc_id" 
+					label="Miscelaneous"
+					description="Type the ID of the user custom field showing Misc"
+					pattern="^(0|[1-9][0-9]*)$"
+					maxlength="5"
+					size="6"
+					class="inputbox"/>
+
+			</fieldset>
+			<fieldset name="advanced">
+				<field 
+					name="custom_mapping" 
+					type="textarea" 
+					label="Custom Form Fields mapping" 
+					description="Custom Form Fields mapping. First Custom User Field ID then Custom Contact Field ID"
+					rows="10" 
+					cols="5"
+					hint="10:7\n11:5"
+					/>
+			</fieldset>
+		</fields>
+	</config>
+</extension>
